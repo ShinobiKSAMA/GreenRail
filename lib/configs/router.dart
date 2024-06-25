@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:greenrail/presenation/navigation_container.dart';
+import 'package:greenrail/presenation/screens/home_screen.dart';
+import 'package:greenrail/presenation/screens/my_account_screen.dart';
+import 'package:greenrail/presenation/screens/my_booking_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router.g.dart';
@@ -21,11 +24,7 @@ GoRouter router(RouterRef ref) {
           GoRoute(
             path: '/home',
             name: 'Home',
-            builder: (context, state) => Scaffold(
-              appBar: AppBar(
-                title: const Text('Home'),
-              ),
-            ),
+            builder: (context, state) => const HomeScreen(),
           ),
           GoRoute(
             path: '/help',
@@ -39,20 +38,12 @@ GoRouter router(RouterRef ref) {
           GoRoute(
             path: '/myBookings',
             name: 'My Bookings',
-            builder: (context, state) => Scaffold(
-              appBar: AppBar(
-                title: const Text('My Bookings'),
-              ),
-            ),
+            builder: (context, state) => const MyBookingScreen(),
           ),
           GoRoute(
             path: '/myAccount',
             name: 'My Account',
-            builder: (context, state) => Scaffold(
-              appBar: AppBar(
-                title: const Text('My Account'),
-              ),
-            ),
+            builder: (context, state) => const MyAccountScreen(),
           ),
         ],
       ),
