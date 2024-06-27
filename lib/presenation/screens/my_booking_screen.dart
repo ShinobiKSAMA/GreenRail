@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:greenrail/core/extensions/context_extension.dart';
 
 class MyBookingScreen extends StatelessWidget {
   const MyBookingScreen({super.key});
@@ -17,9 +18,7 @@ class MyBookingScreen extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               "Bookings",
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge!
+              style: context.textTheme.headlineLarge!
                   .copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
