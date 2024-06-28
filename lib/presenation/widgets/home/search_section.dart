@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:greenrail/core/extensions/context_extension.dart';
 import 'package:greenrail/presenation/widgets/common/shared_button.dart';
+import 'package:greenrail/presenation/widgets/home/details_form_section.dart';
 import 'package:greenrail/presenation/widgets/home/opt_in_tile.dart';
 
 class SearchSection extends StatelessWidget {
@@ -26,21 +27,7 @@ class SearchSection extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 12),
-          CupertinoListSection.insetGrouped(
-            hasLeading: false,
-            dividerMargin: 0,
-            margin: EdgeInsets.zero,
-            backgroundColor: Colors.transparent,
-            decoration: BoxDecoration(
-              border: Border.all(color: context.colorScheme.outline, width: 1),
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-            ),
-            children: const [
-              CupertinoListTile(title: Text("data")),
-              CupertinoListTile(title: Text("data2")),
-              CupertinoListTile(title: Text("data3")),
-            ],
-          ),
+          const DetailsFormSection(),
           const SizedBox(height: 12),
           const OptInTile(),
           const SizedBox(height: 12),
