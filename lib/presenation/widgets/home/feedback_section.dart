@@ -48,13 +48,18 @@ class ButtonGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Expanded(child: SharedButton(title: "Needs Work", outlined: true)),
-        SizedBox(width: 12),
         Expanded(
-          child:
-              SharedButton(title: "Love It!", icon: CupertinoIcons.heart_fill),
+            child: SharedButton(
+                title: "Needs Work", outlined: true, onPressed: () {})),
+        const SizedBox(width: 12),
+        Expanded(
+          child: SharedButton(
+            title: "Love It!",
+            icon: CupertinoIcons.heart_fill,
+            onPressed: () {},
+          ),
         ),
       ],
     );

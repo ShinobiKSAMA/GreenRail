@@ -24,7 +24,7 @@ class OptInTile extends StatelessWidget {
         checkboxShape: const CircleBorder(),
         contentPadding: const EdgeInsets.symmetric(horizontal: 8),
         value: false,
-        onChanged: (value) => null,
+        onChanged: (value) {},
       ),
     );
   }

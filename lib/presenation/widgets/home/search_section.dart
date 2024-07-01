@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:greenrail/core/extensions/context_extension.dart';
 import 'package:greenrail/presenation/widgets/common/shared_button.dart';
-import 'package:greenrail/presenation/widgets/home/details_form_section.dart';
-import 'package:greenrail/presenation/widgets/home/opt_in_tile.dart';
+import 'package:greenrail/presenation/widgets/common/details_form_section.dart';
+import 'package:greenrail/presenation/widgets/common/opt_in_tile.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
@@ -33,8 +34,11 @@ class SearchSection extends StatelessWidget {
           const SizedBox(height: 12),
           const OptInTile(),
           const SizedBox(height: 12),
-          const SharedButton(
-              title: "Search Trains", icon: CupertinoIcons.search),
+          SharedButton(
+            title: "Search Trains",
+            icon: CupertinoIcons.search,
+            onPressed: () => context.pushNamed('Trains Result'),
+          ),
           const SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
