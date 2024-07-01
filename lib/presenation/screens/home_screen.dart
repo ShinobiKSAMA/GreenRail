@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:greenrail/presenation/widgets/home/annoucement_section.dart';
 import 'package:greenrail/presenation/widgets/home/home.dart';
-import 'package:greenrail/presenation/widgets/home/more_section.dart';
-import 'package:greenrail/presenation/widgets/home/search_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -6,9 +6,7 @@ import 'package:greenrail/presenation/widgets/home/details_form_section.dart';
 import 'package:greenrail/presenation/widgets/home/opt_in_tile.dart';
 
 class SearchSection extends StatelessWidget {
-  const SearchSection({
-    super.key,
-  });
+  const SearchSection({super.key});
 
   @override
   Widget build(BuildContext context) {
