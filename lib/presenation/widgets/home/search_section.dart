@@ -21,10 +21,14 @@ class SearchSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
-            "Book Train Tickets",
-            style: context.textTheme.headlineSmall!
-                .copyWith(fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Text(
+                "Book Train Tickets",
+                style: context.textTheme.headlineSmall!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
           const SizedBox(height: 12),
           const DetailsFormSection(),
@@ -34,12 +38,11 @@ class SearchSection extends StatelessWidget {
           const SharedButton(
               title: "Search Trains", icon: CupertinoIcons.search),
           const SizedBox(height: 12),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(CupertinoIcons.train_style_two),
-              SizedBox(width: 4),
-              Text("Authorised IRCTC Partner"),
+              Image.asset('assets/irctc.png', width: 50),
+              const Text("Authorised IRCTC Partner"),
             ],
           ),
         ],

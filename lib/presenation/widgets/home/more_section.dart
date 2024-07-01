@@ -23,21 +23,25 @@ class MoreSection extends StatelessWidget {
               MoreTile(
                 title: "PNR Status",
                 icon: CupertinoIcons.tickets,
+                image: 'pnr.png',
               ),
               SizedBox(width: 8),
               MoreTile(
                 title: "Where is my Train?",
                 icon: CupertinoIcons.train_style_one,
+                image: 'where.png',
               ),
               SizedBox(width: 8),
               MoreTile(
                 title: "Train Schedule",
                 icon: CupertinoIcons.calendar_badge_plus,
+                image: 'schedule.png',
               ),
               SizedBox(width: 8),
               MoreTile(
                 title: "Coach Position",
                 icon: Icons.pin_drop_rounded,
+                image: 'coach.png',
               ),
             ],
           ),
@@ -52,10 +56,12 @@ class MoreTile extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
+    this.image,
   });
 
   final IconData icon;
   final String title;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +73,12 @@ class MoreTile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(icon),
+            image!=null ? Image.asset('assets/$image', width: 24) : Icon(icon),
             const SizedBox(height: 4),
             Text(
               title,
               textAlign: TextAlign.center,
+              maxLines: 2,
               style: const TextStyle(fontWeight: FontWeight.w600),
             ),
           ],

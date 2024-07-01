@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:greenrail/core/extensions/context_extension.dart';
 
@@ -19,7 +18,7 @@ class FAQSection extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 8),
-          FAQTile(title: "Authorised IRCTC partner"),
+          FAQTile(title: "Authorised IRCTC partner", image: 'assets/irctc.png'),
           SizedBox(height: 8),
           FAQTile(title: "Instant refunds on UPI payments"),
           SizedBox(height: 8),
@@ -33,9 +32,10 @@ class FAQSection extends StatelessWidget {
 }
 
 class FAQTile extends StatelessWidget {
-  const FAQTile({super.key, required this.title});
+  const FAQTile({super.key, required this.title, this.image});
 
   final String title;
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class FAQTile extends StatelessWidget {
       title: Text(title),
       tileColor: context.colorScheme.primaryContainer.withOpacity(0.5),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      trailing: const Icon(CupertinoIcons.square_arrow_up_on_square, size: 50),
+      trailing: image!=null ? Image.asset(image!, width: 76) : null,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     );
   }

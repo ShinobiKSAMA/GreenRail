@@ -16,32 +16,45 @@ class DetailsFormSection extends StatelessWidget {
         border: Border.all(color: context.colorScheme.outline, width: 1),
         borderRadius: const BorderRadius.all(Radius.circular(12)),
       ),
-      child: Column(
+      child: Stack(
         children: [
-          const DetailsFormTile(
-            title: "From Station",
-            icon: CupertinoIcons.bus,
-            value: "Panvel PNVL",
+          Column(
+            children: [
+              const DetailsFormTile(
+                title: "From Station",
+                icon: CupertinoIcons.bus,
+                value: "Panvel PNVL",
+              ),
+              const Divider(height: 1),
+              const DetailsFormTile(
+                icon: Icons.bus_alert,
+                title: "To Station",
+                value: "Pune Jn PUNE",
+              ),
+              const Divider(height: 1),
+              DetailsFormTile(
+                icon: CupertinoIcons.calendar,
+                title: "Date of Journey",
+                value: "27 Jun, Thu",
+                trail: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    Chip(label: Text("Tomorrow"), side: BorderSide.none),
+                    SizedBox(width: 8),
+                    Chip(label: Text("Day After"), side: BorderSide.none),
+                  ],
+                ),
+              ),
+            ],
           ),
-          const Divider(height: 1),
-          const DetailsFormTile(
-            icon: Icons.bus_alert,
-            title: "To Station",
-            value: "Pune Jn PUNE",
-          ),
-          const Divider(height: 1),
-          DetailsFormTile(
-            icon: CupertinoIcons.calendar,
-            title: "Date of Journey",
-            value: "27 Jun, Thu",
-            trail: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: const [
-                Chip(label: Text("Tomorrow"), side: BorderSide.none),
-                SizedBox(width: 8),
-                Chip(label: Text("Day After"), side: BorderSide.none),
-              ],
+          Positioned(
+            right: 4,
+            top: 36,
+            child: IconButton.filled(
+              onPressed: () {},
+              icon: const Icon(CupertinoIcons.arrow_up_arrow_down),
+              iconSize: 20,
             ),
           ),
         ],
