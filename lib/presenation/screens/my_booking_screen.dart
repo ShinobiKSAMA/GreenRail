@@ -11,6 +11,7 @@ class MyBookingScreen extends StatelessWidget {
     return SafeArea(
       minimum: const EdgeInsets.symmetric(horizontal: 24),
       child: Scaffold(
+        // backgroundColor: CupertinoColors.systemGroupedBackground,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

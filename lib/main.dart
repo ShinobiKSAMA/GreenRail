@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:greenrail/configs/router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenrail/configs/theme/theme.dart';
+import 'package:greenrail/core/extensions/context_extension.dart';
 
 void main() {
   runApp(const ProviderScope(child: MainApp()));
@@ -24,7 +25,8 @@ class MainApp extends ConsumerWidget {
       theme: ThemeData(
         colorScheme: MaterialTheme.lightScheme(),
         fontFamily: GoogleFonts.outfit().fontFamily,
-        scaffoldBackgroundColor: CupertinoColors.systemGroupedBackground,
+        // scaffoldBackgroundColor: CupertinoColors.systemGroupedBackground,
+        scaffoldBackgroundColor: context.colorScheme.surfaceContainerLowest,
         navigationBarTheme: const NavigationBarThemeData(backgroundColor: CupertinoColors.secondarySystemGroupedBackground),
         appBarTheme: const AppBarTheme(elevation: 0),
         pageTransitionsTheme: const PageTransitionsTheme(
