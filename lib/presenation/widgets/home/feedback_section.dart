@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:greenrail/presenation/widgets/common/shared_button.dart';
+import 'package:greenrail/presenation/widgets/common/common.dart' show SharedButton;
 
 class FeedbackSection extends StatelessWidget {
   const FeedbackSection({super.key});

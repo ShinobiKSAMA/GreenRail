@@ -4,9 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:greenrail/core/extensions/context_extension.dart';
 import 'package:greenrail/core/models/station_model.dart';
 import 'package:greenrail/presenation/modals/search_station_modal.dart';
-import 'package:greenrail/presenation/widgets/common/shared_button.dart';
-import 'package:greenrail/presenation/widgets/common/details_form_section.dart';
-import 'package:greenrail/presenation/widgets/common/opt_in_tile.dart';
+import 'package:greenrail/presenation/widgets/common/common.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
