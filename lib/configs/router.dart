@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:greenrail/core/models/station_model.dart';
 import 'package:greenrail/presenation/navigation_container.dart';
 import 'package:greenrail/presenation/screens/home_screen.dart';
 import 'package:greenrail/presenation/screens/my_account_screen.dart';
@@ -22,7 +23,10 @@ GoRouter router(RouterRef ref) {
         parentNavigatorKey: rootNavigatorKey,
         path: '/trainsResult',
         name: 'Trains Result',
-        builder: (context, state) => const TrainsResultScreen(),
+        builder: (context, state) {
+          final queries = state.extra as (StationModel, StationModel);
+          return TrainsResultScreen(from: queries.$1, to: queries.$2);
+        },
       ),
       ShellRoute(
         observers: [HeroController()],

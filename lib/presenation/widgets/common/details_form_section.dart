@@ -5,7 +5,11 @@ import 'package:greenrail/core/models/station_model.dart';
 import 'package:greenrail/presenation/modals/search_station_modal.dart';
 
 class DetailsFormSection extends StatelessWidget {
-  const DetailsFormSection({super.key});
+  const DetailsFormSection(
+      {super.key, required this.fromStation, required this.toStation});
+
+  final ValueNotifier<StationModel> fromStation;
+  final ValueNotifier<StationModel> toStation;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +17,6 @@ class DetailsFormSection extends StatelessWidget {
       context.showModal(SearchStationModal(controller: controller),
           showDrag: false);
     }
-
-    final ValueNotifier<StationModel> fromStation = ValueNotifier(stations[0]);
-    final ValueNotifier<StationModel> toStation = ValueNotifier(stations[5]);
 
     void swapStations(StationModel from, StationModel to) {
       fromStation.value = to;

@@ -1,10 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:greenrail/core/models/station_model.dart';
 import 'package:greenrail/presenation/widgets/common/opt_in_tile.dart';
 
 class TrainsResultScreen extends StatefulWidget {
-  const TrainsResultScreen({super.key});
+  const TrainsResultScreen({
+    super.key,
+    required this.from,
+    required this.to,
+  });
+
+  final StationModel from;
+  final StationModel to;
 
   @override
   State<TrainsResultScreen> createState() => _TrainsResultScreenState();
@@ -21,7 +29,7 @@ class _TrainsResultScreenState extends State<TrainsResultScreen> {
           SliverAppBar(
             pinned: true,
             centerTitle: true,
-            title: const Text("PNVL to PUNE"),
+            title: Text("${widget.from.code} to ${widget.to.code}"),
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(48),
               child: SizedBox(
