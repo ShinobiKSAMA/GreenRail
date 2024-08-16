@@ -1,4 +1,6 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:greenrail/configs/router.dart';
@@ -7,7 +9,12 @@ import 'package:greenrail/configs/theme/theme.dart';
 import 'package:greenrail/core/extensions/context_extension.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MainApp()));
+  runApp(ProviderScope(
+    child: DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MainApp(), // Wrap your app
+    ),
+  ));
 }
 
 class MainApp extends ConsumerWidget {
@@ -22,12 +29,14 @@ class MainApp extends ConsumerWidget {
       routerDelegate: router.routerDelegate,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
         colorScheme: MaterialTheme.lightScheme(),
         fontFamily: GoogleFonts.outfit().fontFamily,
         // scaffoldBackgroundColor: CupertinoColors.systemGroupedBackground,
         scaffoldBackgroundColor: context.colorScheme.surfaceContainerLowest,
-        navigationBarTheme: const NavigationBarThemeData(backgroundColor: CupertinoColors.secondarySystemGroupedBackground),
+        navigationBarTheme: const NavigationBarThemeData(
+            backgroundColor: CupertinoColors.secondarySystemGroupedBackground),
         appBarTheme: const AppBarTheme(elevation: 0),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: <TargetPlatform, PageTransitionsBuilder>{
