@@ -89,3 +89,10 @@ class _TrainsResultScreenState extends State<TrainsResultScreen> {
     );
   }
 }
+
+List<TrainDetailModel> trains = [
+  TrainDetailModel(
+      trainName: 'Indore to Panvel',
+      trainNo: 452138,
+      schedule: [HaltsModel(station: 'PNVL', time: DateTime.now())]),
+];
